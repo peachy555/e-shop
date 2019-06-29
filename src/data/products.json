@@ -4,43 +4,43 @@
 			"id": 1,
 			"name": "Business Insurance: Budget",
 			"description": "Product 1 description xxxxxxxxxxxx",
-			"price": 20,
+			"price": 20
 		},
 		{
 			"id": 2,
 			"name": "Business Insurance: Standard",
 			"description": "Product 2 description xxxxxxxxxxxx",
-			"price": 1000,
+			"price": 1000
 		},
 		{
 			"id": 3,
 			"name": "Health Cover: Budget",
 			"description": "Product 3 description xxxxxxxxxxxx",
-			"price": 80,
+			"price": 80
 		},
 		{
 			"id": 4,
 			"name": "Health Cover: Standard",
 			"description": "Product 4 description xxxxxxxxxxxx",
-			"price": 500,
+			"price": 500
 		},
 		{
 			"id": 5,
 			"name": "Health Cover: Premium",
 			"description": "Product 5 description xxxxxxxxxxxx",
-			"price": 3000,
+			"price": 3000
 		},
 		{
 			"id": 6,
 			"name": "Car Insurance: Budget",
 			"description": "Product 6 description xxxxxxxxxxxx",
-			"price": 10,
+			"price": 10
 		},
 		{
 			"id": 7,
 			"name": "Car Insurance: Standard",
 			"description": "Product 7 description xxxxxxxxxxxx",
-			"price": 950,
-		},
+			"price": 950
+		}
 	]
 }
