@@ -1,26 +1,40 @@
 * {
 	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+nav, footer {
+	background-color: gray;
+	width: 100%;
+}
+
+nav {
+	height: 60px;
+}
+
+footer {
+	height: 100px;
 }
 
 body {
-	margin: 0;
-	padding: 0;
 	font-family: sans-serif;
 	width: 100%;
 	background-color: lightblue;
 }
 
 .page-container {
-	width: 800px;
-	margin: 10px auto;
-	padding: 30px;
+	width: 80%;
+	margin: 0px auto;
+	padding: 50px 100px;
 	background-color: white;
 }
 
 .product-listing {
-	
+	padding-top: 30px;
 }
 
-.product-listing-item {
-	/*border: 2px solid red;*/
+.product-listing .product-listing-item {
+	margin: 10px auto;
+	padding: 10px 0;
 }

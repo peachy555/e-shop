@@ -3,19 +3,26 @@ import { NavLink } from 'react-router-dom'
 
 import Router from './Router.js'
 
-const Navigation = (props) => <nav>
-	<ul>
-		<li><NavLink to='/'>Home</NavLink></li>
-		<li><NavLink to='/checkout'>Checkout</NavLink></li>
-	</ul>
+const Navigation = (props) => <nav className='navication'>
+	<NavLink to='/'>
+		<h1>E-SHOP</h1>
+	</NavLink>
 </nav>
+
+const Footer = (props) => <footer className='footer'>
+	<NavLink to='/'>
+		<h1>footer</h1>
+	</NavLink>
+</footer>
 
 class App extends Component {
 	render() {
-		return <div className='page-container'>
-	      	<h1>Shopping Cart</h1>
+		return <div>
 	      	<Navigation />
-	      	<Router />
+	      	<div className='page-container'>
+		      	<Router />
+	      	</div>
+	      	<Footer />
 	    </div>
 	}
 }
