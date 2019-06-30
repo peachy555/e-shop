@@ -7,6 +7,9 @@ const Navigation = (props) => <nav className='navication'>
 	<NavLink to='/'>
 		<h1>E-SHOP</h1>
 	</NavLink>
+	<NavLink to='/checkout'>
+		<h1>Checkout</h1>
+	</NavLink>
 </nav>
 
 const Footer = (props) => <footer className='footer'>
