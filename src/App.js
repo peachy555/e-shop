@@ -12,7 +12,7 @@ const Navigation = (props) => <nav>
 
 class App extends Component {
 	render() {
-		return <div>
+		return <div className='page-container'>
 	      	<h1>Shopping Cart</h1>
 	      	<Navigation />
 	      	<Router />
