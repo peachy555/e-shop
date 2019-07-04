@@ -1,6 +1,9 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { Button } from 'semantic-ui-react'
 import _ from 'lodash'
+
+import CheckoutModal from './checkout-modal'
 
 function Checkout(props) {
 	let subTotalPrice = _.sum(props.cart.map(item => item.price * item.quantity))
@@ -27,19 +30,19 @@ function Checkout(props) {
 						<td>{item.quantity}</td>
 						<td>${item.price * item.quantity}</td>
 						<td>
-							<button
+							<Button
 								onClick={(e) => props.addToCart(item)}
-							>+</button>
+							>+</Button>
 						</td>
 						<td>
-							<button
+							<Button
 								onClick={(e) => props.removeFromCart(item)}
-							>-</button>
+							>-</Button>
 						</td>
 						<td>
-							<button
+							<Button
 								onClick={(e) => props.removeAllFromCart(item)}
-							>Remove All</button>
+							>Remove All</Button>
 						</td>
 					</tr>
 				)
@@ -56,8 +59,23 @@ function Checkout(props) {
 				<td></td>
 				<td></td>
 			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td>
+					{
+						props.cart.length
+							? <CheckoutModal { ...props}/>
+							: null
+					}
+				</td>
+			</tr>
 		</tbody>
 	</table>
+
 }
 
 function mapStateToProps(state) {

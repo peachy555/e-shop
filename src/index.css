@@ -60,3 +60,7 @@ ul.top-menu li:nth-child(1):before {
 	content: '';
 	margin: 0;
 }
+
+ul.top-menu a {
+	color: black !important;
+}
