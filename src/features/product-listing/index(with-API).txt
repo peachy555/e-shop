@@ -1,3 +1,5 @@
+//revert back to using local data, because requesting json data from Github results in 403
+
 import React from 'react'
 import ProductListItem from './product-list-item'
 import { connect } from 'react-redux'

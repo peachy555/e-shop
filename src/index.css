@@ -28,6 +28,7 @@ body {
 	margin: 0px auto;
 	padding: 50px 100px;
 	background-color: white;
+	position: relative;
 }
 
 .product-listing {
@@ -37,4 +38,25 @@ body {
 .product-listing .product-listing-item {
 	margin: 10px auto;
 	padding: 10px 0;
+}
+
+ul.top-menu {
+	position: absolute;
+	right: 12%;
+	top: 18px;
+	margin: 0;
+}
+
+ul.top-menu li {
+	display: inline-block;
+}
+
+ul.top-menu li:before {
+	content: '|';
+	margin: 0 10px;
+}
+
+ul.top-menu li:nth-child(1):before {
+	content: '';
+	margin: 0;
 }
