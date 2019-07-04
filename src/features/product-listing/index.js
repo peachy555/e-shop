@@ -1,47 +1,30 @@
 import React from 'react'
 import ProductListItem from './product-list-item'
 import { connect } from 'react-redux'
+import { cartItemsWithQuantities } from '../cart';
 
-import fetchApi from '../../modules/fetch-api'
-
-class ProductListing extends React.Component {
-	componentDidMount() {
-		const { loadProducts } = this.props
-		fetchApi('get', 'https://raw.githubusercontent.com/peachy555/e-shop/master/src/data/products.json')
-		.then((json => {
-			loadProducts(json)
-		}))
+function ProductListing(props) {
+	return <div className='product-listing'>
+	{
+		props.products.map( product =>
+			<ProductListItem
+			product={product}
+			addToCart={props.addToCart}
+			removeFromCart={props.removeFromCart}
+			cartItem={props.cart.filter(cartItem => cartItem.id === product.id)[0]}
+			/>)
 	}
-
-	render() {
-		const { addToCart, removeFromCart, products, cart } = this.props
-
-		return <div className='product-listing'>
-		{
-			products.map( product =>
-				<ProductListItem
-				product={product}
-				addToCart={addToCart}
-				removeFromCart={removeFromCart}
-				cartItem={cart.filter(cartItem => cartItem.id === product.id)[0]}
-				/>)
-		}
-		</div>
-	}
+	</div>
 }
 
 function mapStateToProps(state) {
 	return {
-		cart: state.cart,
-		products: state.products,
+		cart: state.cart
 	}
 }
 
 function mapDispatchToProps(dispatch) {
 	return {
-		loadProducts: (products) => {
-			dispatch({ type: 'LOAD', payload: products })
-		},
 		addToCart: (item) => {
 			dispatch({ type: 'ADD', payload: item })
 		},
