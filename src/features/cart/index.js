@@ -25,7 +25,7 @@ function Checkout(props) {
 		</thead>
 		<tbody>
 			{
-				_.sortBy(props.cart, 'id').map(item => <tr>
+				_.sortBy(props.cart, 'id').map(item => <tr key={item.id}>
 						<td>{item.name} (${item.price})</td>
 						<td>{item.quantity}</td>
 						<td>${item.price * item.quantity}</td>
