@@ -10,6 +10,9 @@ const Navigation = ({cart}) => <nav className='navigation'>
 			<NavLink to='/'>E-SHOP</NavLink>
 		</li>
 		<li>
+			<NavLink to='/'>Catalogue</NavLink>
+		</li>
+		<li>
 			<NavLink to='/checkout'>
 				Checkout ({cart.reduce((acc, item) => {
 					return acc + item.quantity
@@ -20,9 +23,6 @@ const Navigation = ({cart}) => <nav className='navigation'>
 </nav>
 
 const Footer = (props) => <footer className='footer'>
-	<NavLink to='/'>
-		<h1>footer</h1>
-	</NavLink>
 </footer>
 
 class App extends Component {

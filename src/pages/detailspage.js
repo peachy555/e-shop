@@ -1,9 +1,9 @@
 import React from 'react'
 import ProductDetails from '../features/details'
 
-export default function CataloguePage(props) {
+export default function DetailsPage(props) {
 		return <div>
-		<h1>Product Details</h1>
+		<div className='product-details title'><h1>Product Details</h1></div>
 		<ProductDetails />
 	</div>
 }

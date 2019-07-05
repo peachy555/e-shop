@@ -12,25 +12,32 @@ function ProductDetails(props) {
 		{
 			props.details
 			? <div className='product-details'>
-				<h3>{ props.details.name } (id: { props.details.id })</h3>
-				<img src={ props.details.image_url } />
-				<p>{ props.details.description }</p>
-				<p>Price: ${ props.details.price }</p>
-
-				<AddBtn 
-					cartItem={cartItem} 
-					product={props.details} 
-					addToCart={props.addToCart} 
-				/>
-				{
-					cartItem
-						? <RemoveBtn 
-							cartItem={cartItem} 
-							product={props.details} 
-							removeFromCart={props.removeFromCart} 
-						/>
-						: null
-				}
+				<div className='product-details top-row'>
+					<div className='product-details top-row-block'>
+						<img src={ props.details.image_url } />
+					</div>
+					<div className='product-details top-row-block'>
+						<h3>{ props.details.name } (id: { props.details.id })</h3>
+						<p>Price: ${ props.details.price }</p>
+					</div>
+				</div>
+				<div className='product-details description'><p>{ props.details.description }</p></div>
+				<div className='product-details btn'>
+					<AddBtn 
+						cartItem={cartItem} 
+						product={props.details} 
+						addToCart={props.addToCart} 
+					/>
+					{
+						cartItem
+							? <RemoveBtn 
+								cartItem={cartItem} 
+								product={props.details} 
+								removeFromCart={props.removeFromCart} 
+							/>
+							: null
+					}
+				</div>
 			</div>
 			: null
 		}

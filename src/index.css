@@ -32,7 +32,7 @@ body {
 }
 
 .product-listing {
-	padding-top: 30px;
+	padding-top: 15px;
 }
 
 .product-listing .product-listing-item {
@@ -63,4 +63,71 @@ ul.top-menu li:nth-child(1):before {
 
 ul.top-menu a {
 	color: black !important;
+}
+
+table.checkout-table {
+	width: 800px;
+	text-align: left;
+}
+
+.checkout-table.head.name {
+	width: 360px;
+}
+
+.checkout-table.head.quantity {
+	width: 90px;
+}
+
+.checkout-table.head.price {
+	width: 110px;
+}
+
+.checkout-table.head.add {
+	width: 50px;
+}
+
+.checkout-table.head.remove {
+	width: 50px;
+}
+
+.checkout-table.head.remove-all {
+	width: 150px;
+}
+
+.checkout-modal.head.name {
+	width: 380px;
+}
+
+.checkout-modal.head.quantity {
+	width: 120px;
+}
+
+.checkout-modal.head.price {
+	width: 120px;
+}
+
+button.btn.lg {
+	width: 115px;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.product-details.top-row-block {
+	display: inline-block;
+	vertical-align: middle;
+	padding: 0 20px;
+}
+
+.product-details.description, .product-details.btn {
+	padding: 10px 20px;
+}
+
+.product-details.title {
+	padding: 0 20px;
+}
+
+.search-form-input {
+	width: 250px;
 }
