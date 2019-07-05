@@ -1,5 +1,3 @@
-const itemInCart = (cart, item) => cart.filter(cartItem => cartItem.id === item.id)[0]
-
 const itemOnFocus = (item) => {
 	return item
 }

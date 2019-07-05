@@ -16,7 +16,6 @@ const removeFromCart = (cart, item) => {
 }
 
 const removeAllFromCart = (cart, item) => {
-	const cartItem = itemInCart(cart, item)
 	return [ ...cartWithoutItem(cart, item) ]
 }
 

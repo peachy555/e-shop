@@ -1,8 +1,6 @@
 import React from 'react'
 import ProductListItem from './product-list-item'
 import { connect } from 'react-redux'
-import { Input } from 'semantic-ui-react'
-import { cartItemsWithQuantities } from '../cart';
 
 function ProductListing(props) {
 	let filteredList = props.search === undefined ? props.products : props.products.filter(item => item.name.toLowerCase().includes(props.search.toLowerCase()))

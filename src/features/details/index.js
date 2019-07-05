@@ -14,10 +14,14 @@ function ProductDetails(props) {
 			? <div className='product-details'>
 				<div className='product-details top-row'>
 					<div className='product-details top-row-block'>
-						<img src={ props.details.image_url } />
+						<img
+							src={ props.details.image_url }
+							title={ props.details.name }
+							alt={ props.details.name }
+						/>
 					</div>
 					<div className='product-details top-row-block'>
-						<h3>{ props.details.name } (id: { props.details.id })</h3>
+						<h3>{ props.details.name } (Product ID: { props.details.id })</h3>
 						<p>Price: ${ props.details.price }</p>
 					</div>
 				</div>
