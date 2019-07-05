@@ -13,7 +13,10 @@ function ProductDetails(props) {
 			props.details
 			? <div className='product-details'>
 				<h3>{ props.details.name } (id: { props.details.id })</h3>
+				<img src={ props.details.image_url } />
 				<p>{ props.details.description }</p>
+				<p>Price: ${ props.details.price }</p>
+
 				<AddBtn 
 					cartItem={cartItem} 
 					product={props.details} 
