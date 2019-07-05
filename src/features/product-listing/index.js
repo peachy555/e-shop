@@ -9,6 +9,7 @@ function ProductListing(props) {
 		props.products.map( product =>
 			<ProductListItem
 			product={product}
+			itemOnFocus={props.itemOnFocus}
 			addToCart={props.addToCart}
 			removeFromCart={props.removeFromCart}
 			cartItem={props.cart.filter(cartItem => cartItem.id === product.id)[0]}
@@ -19,12 +20,16 @@ function ProductListing(props) {
 
 function mapStateToProps(state) {
 	return {
-		cart: state.cart
+		cart: state.cart,
+		details: state.details
 	}
 }
 
 function mapDispatchToProps(dispatch) {
 	return {
+		itemOnFocus: (item) => {
+			dispatch({ type: 'FOCUS', payload: item })
+		},
 		addToCart: (item) => {
 			dispatch({ type: 'ADD', payload: item })
 		},
