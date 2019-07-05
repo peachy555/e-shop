@@ -4,9 +4,13 @@ import { connect } from 'react-redux'
 import { cartItemsWithQuantities } from '../cart';
 
 function ProductListing(props) {
+	let filteredList = props.search === undefined ? props.products : props.products.filter(item => item.name.toLowerCase().includes(props.search.toLowerCase()))
 	return <div className='product-listing'>
+		<form className='search-form'>
+			<input onChange={props.searchProducts} value={props.search} className='search-form-input' />
+		</form>
 	{
-		props.products.map( product =>
+		filteredList.map( product =>
 			<ProductListItem  
 			key={product.id}
 			product={product}
@@ -22,12 +26,16 @@ function ProductListing(props) {
 function mapStateToProps(state) {
 	return {
 		cart: state.cart,
-		details: state.details
+		details: state.details,
+		search: state.search
 	}
 }
 
 function mapDispatchToProps(dispatch) {
 	return {
+		searchProducts: (searchEvent) => {
+			dispatch({ type: 'SEARCH', payload: searchEvent.target.value })
+		},
 		itemOnFocus: (item) => {
 			dispatch({ type: 'FOCUS', payload: item })
 		},

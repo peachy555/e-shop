@@ -6,25 +6,24 @@ import AddBtn from '../product-listing/add-btn'
 import RemoveBtn from '../product-listing/remove-btn'
 
 function ProductDetails(props) {
-	const productInfo = props.details[0]
-	let cartItem = _.filter(props.cart, item => item.id === productInfo.id)[0]
+	let cartItem = _.filter(props.cart, item => item.id === props.details.id)[0]
 
 	return <div className='product-details'>
 		{
-			productInfo
+			props.details
 			? <div className='product-details'>
-				<h3>{ productInfo.name } (id: { productInfo.id })</h3>
-				<p>{ productInfo.description }</p>
+				<h3>{ props.details.name } (id: { props.details.id })</h3>
+				<p>{ props.details.description }</p>
 				<AddBtn 
 					cartItem={cartItem} 
-					product={props.details[0]} 
+					product={props.details} 
 					addToCart={props.addToCart} 
 				/>
 				{
 					cartItem
 						? <RemoveBtn 
 							cartItem={cartItem} 
-							product={props.details[0]} 
+							product={props.details} 
 							removeFromCart={props.removeFromCart} 
 						/>
 						: null
