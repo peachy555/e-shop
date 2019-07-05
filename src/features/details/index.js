@@ -7,7 +7,8 @@ import RemoveBtn from '../product-listing/remove-btn'
 
 function ProductDetails(props) {
 	const productInfo = props.details[0]
-	let cartItem = _.filter(props.cart, item => item.id == productInfo.id)[0]
+	let cartItem = _.filter(props.cart, item => item.id === productInfo.id)[0]
+
 	return <div className='product-details'>
 		{
 			productInfo
@@ -16,14 +17,14 @@ function ProductDetails(props) {
 				<p>{ productInfo.description }</p>
 				<AddBtn 
 					cartItem={cartItem} 
-					product={props.product} 
+					product={props.details[0]} 
 					addToCart={props.addToCart} 
 				/>
 				{
 					cartItem
 						? <RemoveBtn 
 							cartItem={cartItem} 
-							product={props.product} 
+							product={props.details[0]} 
 							removeFromCart={props.removeFromCart} 
 						/>
 						: null

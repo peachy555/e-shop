@@ -4,11 +4,10 @@ import RemoveBtn from './remove-btn'
 import { NavLink} from 'react-router-dom'
 
 export default function ProductListItem(props) {
-	console.log(props.cartItem)
 	return <div className='product-listing-item'>
 		<h3><NavLink to='/details' onClick={() => props.itemOnFocus(props.product)}>{ props.product.name }</NavLink></h3>
-		<span>Price: ${ props.product.price }</span>
-		<span>
+		<div>Price: ${ props.product.price }</div>
+		<div>
 			<AddBtn 
 				cartItem={props.cartItem} 
 				product={props.product} 
@@ -23,6 +22,6 @@ export default function ProductListItem(props) {
 					/>
 					: null
 			}
-		</span>
+		</div>
 	</div>
 }

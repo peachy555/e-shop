@@ -10,7 +10,7 @@ const addToCart = (cart, item) => {
 
 const removeFromCart = (cart, item) => {
 	const cartItem = itemInCart(cart, item)
-	return item.quantity === 1
+	return cartItem.quantity === 1
 		? [ ...cartWithoutItem(cart, item) ]
 		: [ ...cartWithoutItem(cart, item), { ...cartItem, quantity: cartItem.quantity - 1 } ]
 }
