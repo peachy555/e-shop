@@ -1,5 +1,5 @@
 import React from 'react'
-import ProductListItem from './product-list-item'
+import ProductListItem from './product-list-item.js'
 import { connect } from 'react-redux'
 
 function ProductListing(props) {
@@ -19,7 +19,8 @@ function ProductListing(props) {
 				addToCart={props.addToCart}
 				removeFromCart={props.removeFromCart}
 				cartItem={props.cart.filter(cartItem => cartItem.id === product.id)[0]}
-				/>)
+				/>
+			)
 		}
 	</div>
 }

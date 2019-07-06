@@ -131,3 +131,12 @@ button.btn.lg {
 .search-form-input {
 	width: 250px;
 }
+
+table.checkout-modal {
+	padding-bottom: 30px;
+}
+
+.checkout-table.item.bold {
+	padding-top: 10px;
+	padding-bottom: 30px;
+}
