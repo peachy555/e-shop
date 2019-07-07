@@ -10,6 +10,7 @@ pipeline {
             steps {
                 sh 'echo "Start Jenkins build stage..."'
                 sh 'npm install'
+                sh 'echo "Installed: npm..."'
                 retry(3) {
                     sh ''
                 }
