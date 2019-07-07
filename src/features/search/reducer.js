@@ -1,5 +1,4 @@
 const searchProducts = (state, searchParam) => {
-	console.log(searchParam)
 	return searchParam
 }
 

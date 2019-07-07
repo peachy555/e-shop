@@ -1,12 +1,14 @@
 import React from 'react'
-import ProductListItem from './product-list-item.js'
 import { connect } from 'react-redux'
 
+import ProductListItem from './product-list-item.js'
+import searchProducts from './search.js'
+
 function ProductListing(props) {
-	let filteredList = props.search === undefined ? props.products : props.products.filter(item => item.name.toLowerCase().includes(props.search.toLowerCase()))
+	let filteredList = searchProducts(props)
 	return <div className='product-listing'>
 		<form className='search-form'>
-			<div class="ui focus input">
+			<div className="ui focus input">
 				<input onChange={props.searchProducts} value={props.search} type="text" placeholder='Search...' className='search-form-input'/>
 			</div>
 		</form>
