@@ -1,10 +1,36 @@
 pipeline {
-    agent { docker { image 'e-shop-react-docker' } }
+    agent { 
+    	docker {
+    		image 'peachtuntiwong/e-shop-docker-image'
+    		args '-p 3000:3000'
+    	} 
+    }
     stages {
         stage('build') {
             steps {
-                sh 'npm --version'
+                sh 'echo "Start Jenkins build stage..."'
+                sh 'npm install'
+                retry(3) {
+                    sh ''
+                }
             }
+        }
+    }
+    post {
+        always {
+            echo 'Jenkins Pipeline have finished running...'
+        }
+        success {
+            echo 'Ran sucessfully...'
+        }
+        failure {
+            echo 'Failed to run...'
+        }
+        unstable {
+            echo 'Unstable run...'
+        }
+        changed {
+            echo 'State of Pipeline have been changed'
         }
     }
 }
